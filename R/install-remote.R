@@ -87,11 +87,11 @@ install_remote <- function(remote,
 install_remotes <- function(remotes, ...) {
   res <- character(length(remotes))
   for (i in seq_along(remotes)) {
-    tryCatch(
-      res[[i]] <- install_remote(remotes[[i]], ...),
-      error = function(e) {
-        stop(remote_install_error(remotes[[i]], e))
-      })
+    ## tryCatch(
+      res[[i]] <- install_remote(remotes[[i]], ...)
+      ## error = function(e) {
+      ##   stop(remote_install_error(remotes[[i]], e))
+      ## })
   }
   invisible(res)
 }
